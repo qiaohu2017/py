@@ -30,7 +30,8 @@ ws_cmb = wb.get_sheet_by_name("cmb")
 payerNameList = []
 for row in tuple(ws_ttl.rows):
   payerName = row[4].value    
-  if (payerName.encode('utf8') in orderType ):
+  payerNameU = unicode(payerName)
+  if (payerNameU.encode('utf8') in orderType ):
      payerName = row[5].value  
   print("get payerName:%s "% payerName)
   payerNameList.append(payerName)
