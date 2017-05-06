@@ -21,18 +21,24 @@ for row in tuple(ws_ttl.rows):
   #payerNameU = unicode(payerName)
   #if (payerNameU.encode('utf8') in orderType ):
   #   payerName = row[5].value  
-  payerName = row[6].value  
-  if not payerName  :
+  MaterName = row[5].value  
+  if not MaterName  :
       continue     
-  print("get payerName:%s "% payerName)
-  payerNameList.append(payerName)
+  print("get MaterName:%s "% MaterName)
+  payerNameList.append(MaterName)
+
+  ParentName = row[11].value  
+  if not ParentName  :
+      continue     
+  print("get ParentName:%s "% ParentName)
+  payerNameList.append(ParentName)
 
 rowCounter  = 0
 for row in tuple(ws_cmb.rows):
    rowCounter = rowCounter + 1
    paymentDesc = row[6].value  
    paymentPrice = row[3].value    
-   print("get payment price %s, desc %s "% (paymentPrice, paymentDesc))
+   print("get payment price: %s, description: %s "% (paymentPrice, paymentDesc))
    if not paymentDesc  :
       continue     
 
